@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ExternalLink } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 const projects = [
   {
@@ -54,7 +54,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="group transition-transform duration-300 hover:-translate-y-1"
             >
-              <Card className="bg-black/20 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors h-full">
+              <Card className="bg-black/10 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors h-full">
                 <CardHeader className="flex flex-row items-center justify-between">
                   <CardTitle className="text-xl">{project.title}</CardTitle>
                   <ExternalLink className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
