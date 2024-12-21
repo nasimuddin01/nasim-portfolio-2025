@@ -99,11 +99,10 @@ const OrbitalScene = () => {
 
     // Enhanced particles
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 5000; // Increased particle count
+    const particlesCount = 5000;
     const posArray = new Float32Array(particlesCount * 3);
     
     for(let i = 0; i < particlesCount * 3; i++) {
-      // Wider distribution of particles
       posArray[i] = (Math.random() - 0.5) * 15;
     }
     
@@ -141,7 +140,6 @@ const OrbitalScene = () => {
       }
 
       if (moonRef.current) {
-        // Orbit animation for moon
         const time = Date.now() * 0.001;
         moonRef.current.position.x = Math.cos(time) * 2;
         moonRef.current.position.z = Math.sin(time) * 2;
@@ -161,6 +159,9 @@ const OrbitalScene = () => {
 
       renderer.render(scene, camera);
     };
+
+    // Start the animation loop
+    animate();
 
     // Handle resize
     const handleResize = () => {
