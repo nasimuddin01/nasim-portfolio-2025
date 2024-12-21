@@ -8,7 +8,7 @@ const OrbitalScene = () => {
   const rendererRef = useRef<THREE.WebGLRenderer>();
   const sphereRef = useRef<THREE.Mesh>();
   const particlesRef = useRef<THREE.Points>();
-  const blackHoleRef = useRef<THREE.Mesh>();
+  const blackHoleRef = useRef<THREE.Group>();
   const moonRef = useRef<THREE.Mesh>();
 
   useEffect(() => {
@@ -55,27 +55,56 @@ const OrbitalScene = () => {
     scene.add(moon);
     moonRef.current = moon;
 
-    // Black hole effect
-    const blackHoleGeometry = new THREE.TorusGeometry(1.5, 0.2, 16, 100);
-    const blackHoleMaterial = new THREE.MeshPhongMaterial({
-      color: 0x000000,
+    // Enhanced Black Hole Effect
+    const blackHoleGroup = new THREE.Group();
+    
+    // Core black sphere
+    const blackHoleCore = new THREE.Mesh(
+      new THREE.SphereGeometry(1.2, 32, 32),
+      new THREE.MeshBasicMaterial({ 
+        color: 0x000000,
+        transparent: true,
+        opacity: 0.95
+      })
+    );
+
+    // Accretion disk
+    const diskGeometry = new THREE.TorusGeometry(2, 0.4, 32, 100);
+    const diskMaterial = new THREE.MeshPhongMaterial({
+      color: 0x00ffff,
+      emissive: 0x0088ff,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.6,
     });
-    const blackHole = new THREE.Mesh(blackHoleGeometry, blackHoleMaterial);
-    blackHole.position.set(-3, -2, -2);
-    blackHole.rotation.x = Math.PI / 4;
-    scene.add(blackHole);
-    blackHoleRef.current = blackHole;
+    const accretionDisk = new THREE.Mesh(diskGeometry, diskMaterial);
+    accretionDisk.rotation.x = Math.PI / 3;
+
+    // Outer glow
+    const glowGeometry = new THREE.TorusGeometry(2.2, 0.6, 32, 100);
+    const glowMaterial = new THREE.MeshPhongMaterial({
+      color: 0x0066ff,
+      emissive: 0x001133,
+      transparent: true,
+      opacity: 0.3,
+    });
+    const outerGlow = new THREE.Mesh(glowGeometry, glowMaterial);
+    outerGlow.rotation.x = Math.PI / 3;
+
+    blackHoleGroup.add(blackHoleCore);
+    blackHoleGroup.add(accretionDisk);
+    blackHoleGroup.add(outerGlow);
+    blackHoleGroup.position.set(-3, -1, -3);
+    scene.add(blackHoleGroup);
+    blackHoleRef.current = blackHoleGroup;
 
     // Enhanced particles
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 3000; // Increased particle count
+    const particlesCount = 5000; // Increased particle count
     const posArray = new Float32Array(particlesCount * 3);
     
     for(let i = 0; i < particlesCount * 3; i++) {
       // Wider distribution of particles
-      posArray[i] = (Math.random() - 0.5) * 10;
+      posArray[i] = (Math.random() - 0.5) * 15;
     }
     
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -91,12 +120,16 @@ const OrbitalScene = () => {
     particlesRef.current = particlesMesh;
 
     // Enhanced lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(ambientLight);
 
     const pointLight = new THREE.PointLight(0x9b87f5, 2);
     pointLight.position.set(2, 3, 4);
     scene.add(pointLight);
+
+    const blackHoleLight = new THREE.PointLight(0x0088ff, 2);
+    blackHoleLight.position.set(-3, -1, -3);
+    scene.add(blackHoleLight);
 
     // Animation
     const animate = () => {
@@ -116,7 +149,10 @@ const OrbitalScene = () => {
       }
 
       if (blackHoleRef.current) {
-        blackHoleRef.current.rotation.z += 0.005;
+        blackHoleRef.current.rotation.y += 0.002;
+        // Rotate accretion disk and outer glow independently
+        blackHoleRef.current.children[1].rotation.z += 0.003;
+        blackHoleRef.current.children[2].rotation.z -= 0.002;
       }
 
       if (particlesRef.current) {
@@ -147,7 +183,7 @@ const OrbitalScene = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="orbital-scene" />;
+  return <div ref={mountRef} className="orbital-scene absolute inset-0" />;
 };
 
 export default OrbitalScene;
