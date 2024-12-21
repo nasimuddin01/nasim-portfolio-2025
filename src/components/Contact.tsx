@@ -5,7 +5,7 @@ const Contact = () => {
     <section className="py-24 bg-black">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white/90">Get in Touch</h2>
-        <div className="flex justify-center space-x-8">
+        <div className="flex flex-wrap justify-center gap-6">
           <a
             href="mailto:debater.nasim@gmail.com"
             className="flex items-center space-x-2 text-white/70 hover:text-primary transition-colors"
