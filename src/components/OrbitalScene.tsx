@@ -71,8 +71,8 @@ const OrbitalScene = () => {
     // Accretion disk
     const diskGeometry = new THREE.TorusGeometry(2, 0.4, 32, 100);
     const diskMaterial = new THREE.MeshPhongMaterial({
-      color: 0x00ffff,
-      emissive: 0x0088ff,
+      color: 0xffffff,
+      emissive: 0xcccccc,
       transparent: true,
       opacity: 0.6,
     });
@@ -82,8 +82,8 @@ const OrbitalScene = () => {
     // Outer glow
     const glowGeometry = new THREE.TorusGeometry(2.2, 0.6, 32, 100);
     const glowMaterial = new THREE.MeshPhongMaterial({
-      color: 0x0066ff,
-      emissive: 0x001133,
+      color: 0xffffff,
+      emissive: 0xdddddd,
       transparent: true,
       opacity: 0.3,
     });
@@ -127,7 +127,7 @@ const OrbitalScene = () => {
     pointLight.position.set(2, 3, 4);
     scene.add(pointLight);
 
-    const blackHoleLight = new THREE.PointLight(0x0088ff, 2);
+    const blackHoleLight = new THREE.PointLight(0xffffff, 2);
     blackHoleLight.position.set(-3, -1, -3);
     scene.add(blackHoleLight);
 
@@ -149,10 +149,9 @@ const OrbitalScene = () => {
       }
 
       if (blackHoleRef.current) {
-        blackHoleRef.current.rotation.y += 0.002;
-        // Rotate accretion disk and outer glow independently
-        blackHoleRef.current.children[1].rotation.z += 0.003;
-        blackHoleRef.current.children[2].rotation.z -= 0.002;
+        // Only rotate the accretion disk slowly
+        blackHoleRef.current.children[1].rotation.z += 0.0005;
+        blackHoleRef.current.children[2].rotation.z += 0.0005;
       }
 
       if (particlesRef.current) {
@@ -162,8 +161,6 @@ const OrbitalScene = () => {
 
       renderer.render(scene, camera);
     };
-
-    animate();
 
     // Handle resize
     const handleResize = () => {
