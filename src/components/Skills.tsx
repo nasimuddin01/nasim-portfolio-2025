@@ -1,4 +1,4 @@
-import { Code, Palette, Megaphone } from 'lucide-react';
+import { Brain, Rocket, Target } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 
 const Skills = () => {
@@ -10,7 +10,7 @@ const Skills = () => {
           <Card className="bg-black/40 border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Code className="w-12 h-12 mb-6 text-primary" />
+                <Brain className="w-12 h-12 mb-6 text-primary" />
                 <h3 className="text-2xl font-bold mb-4">Development</h3>
                 <p className="text-white/70">
                   Full-stack engineering with expertise in modern web technologies and AI integration.
@@ -22,7 +22,7 @@ const Skills = () => {
           <Card className="bg-black/40 border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Palette className="w-12 h-12 mb-6 text-primary" />
+                <Rocket className="w-12 h-12 mb-6 text-primary" />
                 <h3 className="text-2xl font-bold mb-4">Design</h3>
                 <p className="text-white/70">
                   Creating intuitive user experiences and visually appealing interfaces.
@@ -34,7 +34,7 @@ const Skills = () => {
           <Card className="bg-black/40 border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Megaphone className="w-12 h-12 mb-6 text-primary" />
+                <Target className="w-12 h-12 mb-6 text-primary" />
                 <h3 className="text-2xl font-bold mb-4">Marketing</h3>
                 <p className="text-white/70">
                   Building and growing products with effective marketing strategies.
