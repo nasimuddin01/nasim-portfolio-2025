@@ -59,13 +59,14 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: -1; /* Moved to the lowest z-index */
   pointer-events: none;
+  opacity: 0.4; /* Further reduced opacity */
 }
 
 .content-overlay {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* Ensure content is above the orbital scene */
 }
 
 .scroll-indicator {

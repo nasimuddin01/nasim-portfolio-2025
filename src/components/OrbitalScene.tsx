@@ -34,7 +34,7 @@ const OrbitalScene = () => {
       color: 0x9b87f5,
       wireframe: true,
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.2, // Reduced opacity
     });
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphere);
@@ -53,6 +53,8 @@ const OrbitalScene = () => {
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.005,
       color: 0xffffff,
+      transparent: true,
+      opacity: 0.3, // Reduced opacity
     });
     
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -60,10 +62,10 @@ const OrbitalScene = () => {
     particlesRef.current = particlesMesh;
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3); // Reduced intensity
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0x9b87f5, 2);
+    const pointLight = new THREE.PointLight(0x9b87f5, 1); // Reduced intensity
     pointLight.position.set(2, 3, 4);
     scene.add(pointLight);
 
