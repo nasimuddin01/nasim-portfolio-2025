@@ -12,8 +12,7 @@ const Hero = () => {
             <span className="block mt-2 text-white/80">AI Solutions</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto text-center mb-12 font-light tracking-wide">
-            A generalist engineer and designer who started tinkering with electronics at an early age. 
-            Now crafting generative AI solutions using cutting-edge technology.
+            Generalist software engineer and designer with a lifelong passion for building - from tinkering with electronics to crafting generative AI solutions.
           </p>
         </div>
         <div className="scroll-indicator">

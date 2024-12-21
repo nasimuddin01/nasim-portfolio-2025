@@ -4,51 +4,51 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 const projects = [
   {
     title: "Vocalo.ai",
-    description: "English speaking practice platform using AI to improve speaking skills.",
+    description: "Gamify language learning with immersive AI conversations, personalised curriculum, and real-time comprehensive feedback.",
     tags: ["LLM", "OpenAI", "TTS", "STT"],
     link: "https://vocalo.ai"
   },
   {
     title: "SketchToImage",
-    description: "Transforms sketches into high quality images using Diffusion Model.",
+    description: "Turn simple sketches into stunning, photorealistic artwork using AI diffusion models.",
     tags: ["Stable Diffusion", "ControlNet", "Image To Video"],
-    link: "https://sketch.connekt.studio"
+    link: "https://sketchtoimage.com"
   },
   {
     title: "HeyLuna.ai",
-    description: "Multimodal AI Assistant with 3D avatar, voice & text interaction.",
+    description: "Experience natural conversations with an expressive 3D AI assistant that sees, hears, and understands.",
     tags: ["LLM", "RAG", "Vector DB", "Chatbot"],
     link: "https://heyluna.ai"
   },
   {
-    title: "Wordrocket.ai",
-    description: "AI content creation platform for text, image, video & audio.",
-    tags: ["LLM", "OpenAI", "Claude", "Content Engine"],
-    link: "https://wordrocket.ai"
-  },
-  {
     title: "PhotoFoxAI",
-    description: "AI-powered photo creation without cameras.",
+    description: "Generate professional-quality product photography and content without traditional photography equipment.",
     tags: ["Flux", "Diffusion", "Image To Image"],
     link: "https://photofox.ai"
   },
   {
     title: "AiStoryGen",
-    description: "AI story generation with text, image, video & audio.",
+    description: "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
     tags: ["LLM", "Diffusion", "Synthetix"],
-    link: "https://aistorygen.com"
+    link: "https://aistorygen.org"
   },
+  {
+    title: "Wordrocket.ai",
+    description: "Create professional content across text, image, video, and audio with one powerful AI platform.",
+    tags: ["LLM", "OpenAI", "Claude", "Content Engine"],
+    link: "https://wordrocket.ai"
+  }
 ];
 
 const Projects = () => {
   return (
     <section className="py-24 bg-black">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90">Projects</h2>
+      <div className="container mx-auto px-4 max-w-7xl relative">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90 z-10">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <a 
-              key={index} 
+            <a
+              key={index}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"

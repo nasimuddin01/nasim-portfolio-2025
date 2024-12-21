@@ -4,21 +4,21 @@ import { Card, CardContent } from './ui/card';
 const Skills = () => {
   return (
     <section className="py-24 bg-black/50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90">A True Builder</h2>
+      <div className="container mx-auto px-4 max-w-7xl relative">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90 z-10">A True Builder</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
                 <Brain className="w-12 h-12 mb-6 text-primary" />
-                <h3 className="text-2xl font-bold mb-4">Development</h3>
+                <h3 className="text-2xl font-bold mb-4">Engineering</h3>
                 <p className="text-white/70">
-                  Full-stack engineering with expertise in modern web technologies and AI integration.
+                  Software engineering with expertise in Web and AI Technologies.
                 </p>
               </div>
             </CardContent>
           </Card>
-          
+
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
@@ -30,7 +30,7 @@ const Skills = () => {
               </div>
             </CardContent>
           </Card>
-          
+
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">

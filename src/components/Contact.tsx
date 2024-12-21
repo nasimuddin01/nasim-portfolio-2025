@@ -7,14 +7,14 @@ const Contact = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white/90">Get in Touch</h2>
         <div className="flex justify-center space-x-8">
           <a
-            href="mailto:contact@example.com"
+            href="mailto:debater.nasim@gmail.com"
             className="flex items-center space-x-2 text-white/70 hover:text-primary transition-colors"
           >
             <Mail className="w-6 h-6" />
             <span>Email</span>
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/nasimuddin01"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-white/70 hover:text-primary transition-colors"
@@ -23,7 +23,7 @@ const Contact = () => {
             <span>Twitter</span>
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/nasimuddin01"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-white/70 hover:text-primary transition-colors"
@@ -32,7 +32,7 @@ const Contact = () => {
             <span>LinkedIn</span>
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/nasimuddin01"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-white/70 hover:text-primary transition-colors"
