@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen overflow-x-hidden;
     font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1, "cv03" 1;
     font-family: 'Space Grotesk', sans-serif;
   }
@@ -46,25 +46,30 @@
 
 .hero-gradient {
   background: linear-gradient(to bottom, rgba(26,31,44,0.8) 0%, rgba(26,31,44,1) 100%);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .orbital-scene {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 0;
+  pointer-events: none;
 }
 
 .content-overlay {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .scroll-indicator {
   @apply absolute bottom-8 left-1/2 transform -translate-x-1/2;
   animation: bounce 2s infinite;
+  z-index: 2;
 }
 
 @keyframes bounce {

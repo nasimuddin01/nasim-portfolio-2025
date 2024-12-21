@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <OrbitalScene />
-      <div className="hero-gradient absolute inset-0" />
+      <div className="hero-gradient" />
       <div className="content-overlay h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6">
           Crafting the Future with
@@ -15,7 +15,7 @@ const Hero = () => {
           Multi-disciplinary tech entrepreneur specializing in cutting-edge AI applications
           and innovative solutions.
         </p>
-        <div className="scroll-indicator animate-bounce">
+        <div className="scroll-indicator">
           <ChevronDown className="w-6 h-6 text-primary" />
         </div>
       </div>
