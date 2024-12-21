@@ -7,7 +7,7 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90">A True Builder</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-black/40 border-primary/20">
+          <Card className="bg-black/20 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
                 <Brain className="w-12 h-12 mb-6 text-primary" />
@@ -19,7 +19,7 @@ const Skills = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-black/40 border-primary/20">
+          <Card className="bg-black/20 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
                 <Rocket className="w-12 h-12 mb-6 text-primary" />
@@ -31,7 +31,7 @@ const Skills = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-black/40 border-primary/20">
+          <Card className="bg-black/20 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
                 <Target className="w-12 h-12 mb-6 text-primary" />

@@ -35,7 +35,7 @@ const Experience = () => {
         <div className="max-w-3xl mx-auto">
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="bg-black/40 border-primary/20">
+              <Card key={index} className="bg-black/20 backdrop-blur-sm border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                     <div>
