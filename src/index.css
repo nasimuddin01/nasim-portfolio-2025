@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply bg-background text-foreground min-h-screen overflow-x-hidden;
+    @apply bg-transparent text-foreground min-h-screen overflow-x-hidden;
     font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1, "cv03" 1;
     font-family: 'Space Grotesk', sans-serif;
   }
