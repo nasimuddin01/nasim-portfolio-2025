@@ -8,7 +8,6 @@ const OrbitalScene = () => {
   const rendererRef = useRef<THREE.WebGLRenderer>();
   const sphereRef = useRef<THREE.Mesh>();
   const particlesRef = useRef<THREE.Points>();
-  const blackHoleRef = useRef<THREE.Mesh>();
   const moonRef = useRef<THREE.Mesh>();
 
   useEffect(() => {
@@ -42,39 +41,26 @@ const OrbitalScene = () => {
     scene.add(sphere);
     sphereRef.current = sphere;
 
-    // Moon
-    const moonGeometry = new THREE.SphereGeometry(0.3, 24, 24);
+    // Enhanced Moon
+    const moonGeometry = new THREE.SphereGeometry(0.3, 32, 32);
     const moonMaterial = new THREE.MeshPhongMaterial({
-      color: 0xcccccc,
-      wireframe: true,
+      color: 0xe0e0e0,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.8,
+      wireframe: false,
+      flatShading: true,
     });
     const moon = new THREE.Mesh(moonGeometry, moonMaterial);
     moon.position.set(2, 1, 1);
     scene.add(moon);
     moonRef.current = moon;
 
-    // Black hole effect
-    const blackHoleGeometry = new THREE.TorusGeometry(1.5, 0.2, 16, 100);
-    const blackHoleMaterial = new THREE.MeshPhongMaterial({
-      color: 0x000000,
-      transparent: true,
-      opacity: 0.8,
-    });
-    const blackHole = new THREE.Mesh(blackHoleGeometry, blackHoleMaterial);
-    blackHole.position.set(-3, -2, -2);
-    blackHole.rotation.x = Math.PI / 4;
-    scene.add(blackHole);
-    blackHoleRef.current = blackHole;
-
     // Enhanced particles
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 3000; // Increased particle count
+    const particlesCount = 3000;
     const posArray = new Float32Array(particlesCount * 3);
     
     for(let i = 0; i < particlesCount * 3; i++) {
-      // Wider distribution of particles
       posArray[i] = (Math.random() - 0.5) * 10;
     }
     
@@ -108,15 +94,11 @@ const OrbitalScene = () => {
       }
 
       if (moonRef.current) {
-        // Orbit animation for moon
-        const time = Date.now() * 0.001;
+        // Smoother moon orbit animation
+        const time = Date.now() * 0.0005;
         moonRef.current.position.x = Math.cos(time) * 2;
         moonRef.current.position.z = Math.sin(time) * 2;
-        moonRef.current.rotation.y += 0.02;
-      }
-
-      if (blackHoleRef.current) {
-        blackHoleRef.current.rotation.z += 0.005;
+        moonRef.current.rotation.y += 0.01;
       }
 
       if (particlesRef.current) {
