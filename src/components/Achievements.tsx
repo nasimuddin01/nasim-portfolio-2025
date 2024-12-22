@@ -4,28 +4,32 @@ const achievements = [
     {
         metric: "5+",
         label: "Years Active",
-        bgColor: "bg-pink-50/5",
+        gradientFrom: "from-pink-600/20",
+        gradientTo: "to-purple-600/20",
         icon: Clock,
         iconColor: "text-pink-400"
     },
     {
         metric: "7+",
         label: "Products Launched",
-        bgColor: "bg-blue-50/5",
+        gradientFrom: "from-blue-600/20",
+        gradientTo: "to-cyan-600/20",
         icon: Package,
         iconColor: "text-blue-400"
     },
     {
         metric: "100k+",
         label: "Worldwide Users",
-        bgColor: "bg-cyan-50/5",
+        gradientFrom: "from-cyan-600/20",
+        gradientTo: "to-teal-600/20",
         icon: Users,
         iconColor: "text-cyan-400"
     },
     {
         metric: "4.8+",
         label: "Average Rating",
-        bgColor: "bg-yellow-50/5",
+        gradientFrom: "from-yellow-600/20",
+        gradientTo: "to-orange-600/20",
         icon: Star,
         iconColor: "text-yellow-400"
     },
@@ -35,18 +39,33 @@ const Achievements = () => {
     return (
         <section className="py-24 bg-black">
             <div className="container mx-auto px-4 max-w-7xl relative">
-                <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90 z-10">
+                <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white/90">
                     Achievements
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {achievements.map((item, index) => (
                         <div
                             key={index}
-                            className={`${item.bgColor} backdrop-blur-sm border border-primary/20 rounded-2xl p-6 flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-1`}
+                            className="relative group"
                         >
-                            <item.icon className={`w-10 h-10 mb-4 ${item.iconColor}`} strokeWidth={2} />
-                            <span className="text-4xl md:text-5xl font-bold mb-2">{item.metric}</span>
-                            <span className="text-white/70 text-center text-sm md:text-base">{item.label}</span>
+                            <div className={`absolute inset-0 bg-gradient-to-br ${item.gradientFrom} ${item.gradientTo} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl`} />
+
+                            <div className="relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full 
+                                          transition-all duration-300 group-hover:scale-105 group-hover:border-white/20
+                                          flex flex-col items-center justify-center overflow-hidden">
+                                <div className={`absolute w-24 h-24 rounded-full blur-2xl ${item.iconColor} opacity-20 -z-10`} />
+
+                                <item.icon
+                                    className={`w-10 h-10 mb-4 ${item.iconColor} transition-transform duration-300 group-hover:scale-110`}
+                                    strokeWidth={1.5}
+                                />
+                                <span className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
+                                    {item.metric}
+                                </span>
+                                <span className="text-white/70 text-center text-sm md:text-base font-medium">
+                                    {item.label}
+                                </span>
+                            </div>
                         </div>
                     ))}
                 </div>

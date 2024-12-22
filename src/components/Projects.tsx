@@ -6,37 +6,43 @@ const projects = [
     title: "Vocalo.ai",
     description: "Gamify language learning with immersive AI conversations, personalised curriculum, and real-time comprehensive feedback.",
     tags: ["LLM", "OpenAI", "TTS", "STT"],
-    link: "https://vocalo.ai"
+    link: "https://vocalo.ai",
+    color: "text-purple-600"
   },
   {
     title: "SketchToImage",
     description: "Turn simple sketches into stunning, photorealistic artwork using AI diffusion models.",
     tags: ["Stable Diffusion", "ControlNet", "Image To Video"],
-    link: "https://sketchtoimage.com"
+    link: "https://sketchtoimage.com",
+    color: "text-pink-600"
   },
   {
     title: "HeyLuna.ai",
     description: "Experience natural conversations with an expressive 3D AI assistant that sees, hears, and understands.",
     tags: ["LLM", "RAG", "Vector DB", "Chatbot"],
-    link: "https://heyluna.ai"
+    link: "https://heyluna.ai",
+    color: "text-yellow-400"
   },
   {
     title: "PhotoFoxAI",
     description: "Generate professional-quality product photography and content without traditional photography equipment.",
     tags: ["Flux", "Diffusion", "Image To Image"],
-    link: "https://photofox.ai"
+    link: "https://photofox.ai",
+    color: "text-blue-400"
   },
   {
     title: "AiStoryGen",
     description: "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
     tags: ["LLM", "Diffusion", "Synthetix"],
-    link: "https://aistorygen.org"
+    link: "https://aistorygen.org",
+    color: "text-orange-400"
   },
   {
     title: "Wordrocket.ai",
     description: "Create professional content across text, image, video, and audio with one powerful AI platform.",
     tags: ["LLM", "OpenAI", "Claude", "Content Engine"],
-    link: "https://wordrocket.ai"
+    link: "https://wordrocket.ai",
+    color: "text-rose-400"
   }
 ];
 
@@ -52,27 +58,33 @@ const Projects = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group transition-transform duration-300 hover:-translate-y-1"
+              className="group relative rounded-xl p-1 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent"
             >
-              <Card className="bg-black/10 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors h-full">
-                <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <ExternalLink className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white/70 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary/90"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative bg-black/40 backdrop-blur-xl rounded-lg p-4 md:p-6 h-full">
+                <div className="flex items-center justify-between gap-3 md:gap-4 mb-4 md:mb-6">
+                  <h3 className={`text-lg md:text-xl font-semibold ${project.color}`}>{project.title}</h3>
+                  <ExternalLink className={`w-4 h-4 ${project.color} opacity-70 group-hover:opacity-100 transition-colors`} />
+                </div>
+
+                <p className="text-white/70 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-1 md:gap-1.5">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className={`px-2 md:px-2.5 py-0.5 md:py-1 text-[11px] md:text-xs rounded-md
+                        bg-primary/5 hover:bg-primary/15
+                        border border-primary/10 hover:border-primary/30
+                        transition-all duration-300
+                        text-white/80
+                        ${project.color.replace('text-', 'hover:text-')}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </a>
           ))}
         </div>
