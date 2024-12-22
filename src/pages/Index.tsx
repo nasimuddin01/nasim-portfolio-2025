@@ -3,6 +3,8 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import Achievements from "@/components/Achievements";
+import TechStack from "@/components/TechStack";
 
 const Index = () => {
   return (
@@ -10,6 +12,8 @@ const Index = () => {
       <Hero />
       <Skills />
       <Projects />
+      <Achievements />
+      <TechStack />
       <Experience />
       <Contact />
     </main>

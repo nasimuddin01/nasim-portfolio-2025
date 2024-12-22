@@ -10,7 +10,7 @@ const Skills = () => {
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Brain className="w-12 h-12 mb-6 text-primary" />
+                <Brain className="w-12 h-12 mb-6 text-blue-400" />
                 <h3 className="text-2xl font-bold mb-4">Engineering</h3>
                 <p className="text-white/70">
                   Software engineering with expertise in Web and AI Technologies.
@@ -22,7 +22,7 @@ const Skills = () => {
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Rocket className="w-12 h-12 mb-6 text-primary" />
+                <Rocket className="w-12 h-12 mb-6 text-purple-400" />
                 <h3 className="text-2xl font-bold mb-4">Design</h3>
                 <p className="text-white/70">
                   Creating intuitive user experiences and visually appealing interfaces.
@@ -34,7 +34,7 @@ const Skills = () => {
           <Card className="bg-black/10 backdrop-blur-sm border-primary/20">
             <CardContent className="pt-8">
               <div className="flex flex-col items-center text-center">
-                <Target className="w-12 h-12 mb-6 text-primary" />
+                <Target className="w-12 h-12 mb-6 text-green-400" />
                 <h3 className="text-2xl font-bold mb-4">Marketing</h3>
                 <p className="text-white/70">
                   Building and growing products with effective marketing strategies.
