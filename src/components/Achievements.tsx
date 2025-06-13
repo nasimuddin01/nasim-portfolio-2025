@@ -10,7 +10,7 @@ const achievements = [
         iconColor: "text-pink-400"
     },
     {
-        metric: "7+",
+        metric: "10+",
         label: "Products Launched",
         gradientFrom: "from-blue-600/20",
         gradientTo: "to-cyan-600/20",
