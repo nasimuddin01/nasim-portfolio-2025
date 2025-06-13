@@ -38,12 +38,33 @@ const projects = [
     color: "text-orange-400"
   },
   {
-    title: "Wordrocket.ai",
-    description: "Create professional content across text, image, video, and audio with one powerful AI platform.",
-    tags: ["LLM", "OpenAI", "Claude", "Content Engine"],
-    link: "https://wordrocket.ai",
+    title: "InvoiceAgent.ai",
+    description: "Automate invoice extraction and cost management for businesses with AI.",
+    tags: ["LLM", "OCR", "Natural Language Query"],
+    link: "https://invoiceagent.ai",
     color: "text-rose-400"
-  }
+  },
+  {
+    title: "Path Health",
+    description: "AI-powered fitness and wellness platform for personalized workouts & nutrition recommendations.",
+    tags: ["LLM", "OpenAI", "Claude", "Content Engine"],
+    link: "https://trypathhealth.com",
+    color: "text-emerald-400"
+  },
+  {
+    title: "CallWise.ai",
+    description: "AI voice agent for personalized call scheduling and follow-ups.",
+    tags: ["LLM", "TTS", "STT", "Twilio"],
+    link: "https://callwise.ai",
+    color: "text-cyan-400"
+  },
+  {
+    title: "PhotoBooth AI",
+    description: "AI-powered photo booth for personalized photos in various styles.",
+    tags: ["Diffusion", "Image To Image", "AI Upscaling"],
+    link: "https://photobooth.connekt.studio",
+    color: "text-violet-400"
+  },
 ];
 
 const Projects = () => {
